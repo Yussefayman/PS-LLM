@@ -1,0 +1,4 @@
+groq>=1.1.2
+sentence-transformers>=3.4.1
+numpy>=1.26.0
+python-dotenv>=1.0.1
