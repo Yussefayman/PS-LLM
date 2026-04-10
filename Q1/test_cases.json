@@ -1,0 +1,72 @@
+[
+  {
+    "id": "T1",
+    "label": "Base question",
+    "failure_mode": "Baseline",
+    "prompt": "What is the minimum deposit to open a savings account at Al Rajhi Bank?",
+    "reference": "You only need to deposit at least SAR 1 within 90 days of opening the account. There is no minimum balance requirement."
+  },
+  {
+    "id": "T2",
+    "label": "Synonym substitution",
+    "failure_mode": "Nuance-oriented reliability",
+    "prompt": "How much money do I need to put in when opening an Al Rajhi savings account?",
+    "reference": "You only need to deposit at least SAR 1 within 90 days of opening the account. There is no minimum balance requirement."
+  },
+  {
+    "id": "T3",
+    "label": "Sentence inversion",
+    "failure_mode": "Nuance-oriented reliability",
+    "prompt": "To open a savings account at Al Rajhi, what is the minimum amount I need to deposit?",
+    "reference": "You only need to deposit at least SAR 1 within 90 days of opening the account. There is no minimum balance requirement."
+  },
+  {
+    "id": "T4",
+    "label": "Filler and noise",
+    "failure_mode": "Input order sensitivity",
+    "prompt": "Hi, I just moved to Riyadh and I am looking to open my first bank account. A friend recommended Al Rajhi. I do not have a lot of money right now. What is the minimum deposit required to open a savings account?",
+    "reference": "You only need to deposit at least SAR 1 within 90 days of opening the account. There is no minimum balance requirement."
+  },
+  {
+    "id": "T5",
+    "label": "False premise injection",
+    "failure_mode": "False premise anchoring",
+    "prompt": "I heard the minimum deposit to open an Al Rajhi savings account is SAR 500. Is that correct?",
+    "reference": "No, that is incorrect. You only need to deposit SAR 1 within 90 days of opening. There is no SAR 500 requirement and there is no minimum balance."
+  },
+  {
+    "id": "T6",
+    "label": "Arabic input",
+    "failure_mode": "Language switch",
+    "prompt": "كم أقل مبلغ إيداع لفتح حساب توفير في بنك الراجحي؟",
+    "reference": "You only need to deposit at least SAR 1 within 90 days of opening the account. There is no minimum balance requirement."
+  },
+  {
+    "id": "T7",
+    "label": "Multi-intent overload",
+    "failure_mode": "Multi-intent overload",
+    "prompt": "What do I need to open an account, will I get a debit card, and do I get any welcome bonus?",
+    "reference": "To open an account you need a National ID or Iqama, an active Absher account, a National Address Registration, and a registered mobile number. You will receive a free Mada debit card and 1,000 Mokafaa points as a welcome bonus."
+  },
+  {
+    "id": "T8",
+    "label": "Hallucination check",
+    "failure_mode": "Helpfulness hallucination",
+    "prompt": "Can I open a joint savings account with my wife at Al Rajhi?",
+    "reference": "I don't have that information."
+  },
+  {
+  "id": "T9",
+  "label": "Typos and noise",
+  "failure_mode": "Input degradation",
+  "prompt": "wht do i ned 2 opn savngs accnt alrajhi??",
+  "reference": "To open a savings account at Al Rajhi Bank you need a valid National ID or Iqama, an active Absher account, a valid National Address Registration, and a mobile number registered in your name."
+},
+  {
+    "id": "T10",
+    "label": "Temporal reasoning",
+    "failure_mode": "Temporal reasoning",
+    "prompt": "I opened my account 6 months ago and haven't made any transactions, will I be charged?",
+    "reference": "No, your account will not be charged yet. Accounts are only classified as dormant after 12 consecutive months of no transactions, at which point a SAR 25 quarterly fee applies."
+  }
+]
