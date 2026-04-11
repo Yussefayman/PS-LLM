@@ -35,7 +35,7 @@ embedder = SentenceTransformer(EMBEDDING_MODEL)
 console  = Console()
 
 
-def call_llm(prompt: str) -> str:
+def llm_service(prompt: str) -> str:
     res = client.chat.completions.create(
         model=LLM_MODEL,
         messages=[
@@ -53,7 +53,7 @@ def semantic_score(a: str, b: str) -> float:
     return float(dot(ea, eb) / (norm(ea) * norm(eb)))
 
 
-def run():
+def prompt_eval():
     with open("test_cases.json", encoding="utf-8") as f:
         cases = json.load(f)
 
@@ -63,7 +63,7 @@ def run():
     console.print(f"[dim]LLM: {LLM_MODEL} | Embedder: {EMBEDDING_MODEL} | Threshold: {THRESHOLD}[/dim]\n")
 
     for case in track(cases, description="Running..."):
-        response = call_llm(case["prompt"])
+        response = llm_service(case["prompt"])
         score    = semantic_score(response, case["reference"])
         results.append({**case, "score": round(score, 3), "passed": score >= THRESHOLD, "response": response})
 
@@ -96,4 +96,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    prompt_eval()
