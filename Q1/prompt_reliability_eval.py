@@ -12,9 +12,9 @@ from rich.progress import track
 load_dotenv()
 
 GROQ_API_KEY    = os.getenv("GROQ_API_KEY")
-LLM_MODEL       = os.getenv("LLM_MODEL",       "llama3-8b-8192")
+LLM_MODEL       = os.getenv("LLM_MODEL")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "paraphrase-multilingual-MiniLM-L12-v2")
-THRESHOLD       = float(os.getenv("SEMANTIC_THRESHOLD", "0.85"))
+THRESHOLD       = float(os.getenv("SEMANTIC_THRESHOLD", "0.6"))
 
 SYSTEM_PROMPT = """You are a banking assistant for Al Rajhi Bank.
 Answer using ONLY the knowledge base below. If the answer is not here, say you don't have that information.
